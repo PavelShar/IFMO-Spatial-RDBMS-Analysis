@@ -1,1 +1,1 @@
-# ifmo_spatial_dbs_analysis
+# Spatial DBs analysis: MySQL 5.7.17 vs MariaDB 10.3.0 vs PostgreSQL
