@@ -24,6 +24,9 @@ After execute all sql files with prefix **[MySQL]** for MySQL or with prefix **[
 
 ### Functions and Procedures  
 To install SQL procedures and functions just execute all `.sql` files from `procedures` folder. Maker shure that you are using right database before execution or just use `use %dbname%` (change %dbname% to your database) sql command before each execution.
+* `GeometryArea` gets polygon field and return its area in square meters  
+* `get_execution_time` gets number of iterations and query as string. This procedure returns void, but store execution time for each iteration in table `results`.
+* `get_time_results` calculate min, max and average execution time for last query (from `get_execution_time`). This procedure rank results and remove 2,5% start and end tails to remove outliers. To see results you should use default pager or execute it from phpmyadmin.
 
 ### Data  
 
