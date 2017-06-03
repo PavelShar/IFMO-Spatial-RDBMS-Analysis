@@ -41,6 +41,7 @@ To get more accuracy results you should execute all queries in mysql/maria cli (
 I test 108 polygons with 3 points pack: 800k, 3kk and 10kk.  
 All execution time in seconds  
 
+#### Operations with polygons
 #### MySQL 5.7.17 (MyISAM)
 | SQL                            	| Min      	| Max      	| Average  	| Iterations 	|
 |--------------------------------	|----------	|----------	|----------	|------------	|
@@ -77,5 +78,30 @@ All execution time in seconds
 | ST_Overlaps                    	| 1.163341 	| 1.411400 	| 1.299009 	| 100        	|
 | GeometryArea                   	| 0.373162 	| 0.516149 	| 0.393356 	| 100        	|
 
+#### Operations with points and polygons  
+#### 800k points pack
+| RDBMS + Engine   	| Min       	| Max       	| Average   	| Iterations 	|
+|------------------	|-----------	|-----------	|-----------	|------------	|
+| MySQL + InnoDB   	| 16.424526 	| 16.535731 	| 16.484337 	| 10         	|
+| MySQL + MyISAM   	| 16.172576 	| 16.381232 	| 16.309571 	| 10         	|
+| MariaDB + Aria   	| 1.065483  	| 1.125784  	| 1.089898  	| 10         	|
+| MariaDB + XtraDB 	| 0.832023  	| 1.209595  	| **0.925634**  	| 10         	|
+| MariaDB + MyISAM 	| 1.018628  	| 1.156099  	| 1.075703  	| 10         	|
 
+#### 3kk points pack
+| RDBMS + Engine   	| Min       	| Max       	| Average   	| Iterations 	|
+|------------------	|-----------	|-----------	|-----------	|------------	|
+| MySQL + InnoDB   	| 66.315996 	| 72.480132 	| 69.693828 	| 10         	|
+| MySQL + MyISAM   	| 66.494741 	| 71.880738 	| 69.366314 	| 10         	|
+| MariaDB + Aria   	| 6.765664  	| 7.737256  	| **7.574346**  	| 10         	|
+| MariaDB + XtraDB 	| 8.035554  	| 10.124397 	| 9.154157  	| 10         	|
+| MariaDB + MyISAM 	| 7.196527  	| 10.217151 	| 8.889207  	| 10         	|
 
+#### 10kk points pack
+| RDBMS + Engine   	| Min        	| Max        	| Average    	| Iterations 	|
+|------------------	|------------	|------------	|------------	|------------	|
+| MySQL + InnoDB   	| 187.397758 	| 192.15917  	| 189.576861 	| 10         	|
+| MySQL + MyISAM   	| 184.822772 	| 191.489096 	| 188.716091 	| 10         	|
+| MariaDB + Aria   	| 13.292874  	| 17.710846  	| **17.08931**   	| 10         	|
+| MariaDB + XtraDB 	| 14.422254  	| 18.774196  	| 17.657928  	| 10         	|
+| MariaDB + MyISAM 	| 13.204355  	| 18.986446  	| 17.226407  	| 10         	|
