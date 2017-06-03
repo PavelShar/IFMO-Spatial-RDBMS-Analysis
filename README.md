@@ -28,5 +28,6 @@ To install SQL procedures and functions just execute all `.sql` files from `proc
 ### Data  
 
 ### Queries
-All queries for analysis are in folder `queires`.
+All queries for analysis are in folder `queries`.  
+To get more accuracy results you should execute all queries in mysql/maria cli (not in phpmyadmin) to avoid data transfer from mysql/maria to phpmyadmin. Also you should suppress mysql/maria cli output and pass stderr stdout to /dev/null/. Just use `pager > /dev/null` in cli. To reset pager just execute `pager`.  
 > Engine Aria supported only in MariaDB. So queries that use Aria won't work in MySQL
