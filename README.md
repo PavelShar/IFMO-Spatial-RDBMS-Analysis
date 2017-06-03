@@ -14,3 +14,19 @@ The same idea with MariaDB.
 1. `docker run --name mariadb -e MYSQL_ROOT_PASSWORD=pass -d mariadb:10.3.0`
 2. `docker run --name myadmin-mdb -d --link mariadb:db -p 8081:80 phpmyadmin/phpmyadmin` this time phpmyadmin started on 8081 port.  
 3. `docker run -it --link mariadb:mysql --rm mariadb sh -c 'exec mysql -h"$MYSQL_PORT_3306_TCP_ADDR" -P"$MYSQL_PORT_3306_TCP_PORT" -uroot -ppass'`
+
+
+### Schemes
+Use schemes from folder `schemes` to create db structure.  
+First execute `createDB.sql` or create db manually.  
+Then execute `createResults.sql` to create "time-results-table".  
+After execute all sql files with prefix **[MySQL]** for MySQL or with prefix **[MariaDB]** for MariaDB.  
+
+### Functions and Procedures  
+To install SQL procedures and functions just execute all `.sql` files from `procedures` folder. Maker shure that you are using right database before execution or just use `use %dbname%` (change %dbname% to your database) sql command before each execution.
+
+### Data  
+
+### Queries
+All queries for analysis are in folder `queires`.
+> Engine Aria supported only in MariaDB. So queries that use Aria won't work in MySQL
