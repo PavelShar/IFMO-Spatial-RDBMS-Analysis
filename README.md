@@ -39,7 +39,43 @@ To get more accuracy results you should execute all queries in mysql/maria cli (
 
 ### My results
 I test 108 polygons with 3 points pack: 800k, 3kk and 10kk.  
-[Table goes here]
-[Graphic goes here]
-[Computer config goes here]
+All execution time in seconds  
+
+#### MySQL 5.7.17 (MyISAM)
+| SQL                            	| Min      	| Max      	| Average  	| Iterations 	|
+|--------------------------------	|----------	|----------	|----------	|------------	|
+| ST_Centroid                    	| 0.003801 	| 0.029835 	| 0.010308 	| 1000       	|
+| ST_NumPoints + ST_ExteriorRing 	| 0.001188 	| 0.024642 	| 0.007007 	| 1000       	|
+| ST_ExteriorRing                	| 0.016257 	| 9.995251 	| 0.232375 	| 1000       	|
+| ST_Overlaps                    	| 1.53927  	| 1.743081 	| 1.648591 	| 100        	|
+| GeometryArea                   	| 0.447757 	| 0.601454 	| 0.479234 	| 100        	|
+
+#### MariaDB 10.3.0 (XtraDB)
+| SQL                            	| Min      	| Max      	| Average  	| Iterations 	|
+|--------------------------------	|----------	|----------	|----------	|------------	|
+| ST_Centroid                    	| 0.000831 	| 1.229162 	| 0.003299 	| 1000       	|
+| ST_NumPoints + ST_ExteriorRing 	| 0.000490 	| 0.002692 	| 0.000987 	| 1000       	|
+| ST_ExteriorRing                	| 0.012387 	| 1.924234 	| 0.254423 	| 1000       	|
+| ST_Overlaps                    	| 0.945600 	| 1.989956 	| 1.394064 	| 100        	|
+| GeometryArea                   	| 0.377513 	| 0.459000 	| 0.398138 	| 100        	|
+
+#### MariaDB 10.3.0 (MyISAM)
+| SQL                            	| Min      	| Max      	| Average  	| Iterations 	|
+|--------------------------------	|----------	|----------	|----------	|------------	|
+| ST_Centroid                    	| 0.000710 	| 0.265722 	| 0.001960 	| 1000       	|
+| ST_NumPoints + ST_ExteriorRing 	| 0.000393 	| 0.010301 	| 0.000956 	| 1000       	|
+| ST_ExteriorRing                	| 0.012026 	| 5.703852 	| 0.215109 	| 1000       	|
+| ST_Overlaps                    	| 1.040729 	| 1.510067 	| 1.284243 	| 100        	|
+| GeometryArea                   	| 0.372664 	| 0.441612 	| 0.390596 	| 100        	|
+
+#### MariaDB 10.3.0 (Aria)
+| SQL                            	| Min      	| Max      	| Average  	| Iterations 	|
+|--------------------------------	|----------	|----------	|----------	|------------	|
+| ST_Centroid                    	| 0.001149 	| 0.273795 	| 0.003273 	| 1000       	|
+| ST_NumPoints + ST_ExteriorRing 	| 0.000906 	| 0.013140 	| 0.002208 	| 1000       	|
+| ST_ExteriorRing                	| 0.012414 	| 1.485129 	| 0.228626 	| 1000       	|
+| ST_Overlaps                    	| 1.163341 	| 1.411400 	| 1.299009 	| 100        	|
+| GeometryArea                   	| 0.373162 	| 0.516149 	| 0.393356 	| 100        	|
+
+
 
