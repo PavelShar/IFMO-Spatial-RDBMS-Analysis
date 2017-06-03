@@ -28,9 +28,18 @@ To install SQL procedures and functions just execute all `.sql` files from `proc
 * `get_execution_time` gets number of iterations and query as string. This procedure returns void, but store execution time for each iteration in table `results`.
 * `get_time_results` calculate min, max and average execution time for last query (from `get_execution_time`). This procedure rank results and remove 2,5% start and end tails to remove outliers. To see results you should use default pager or execute it from phpmyadmin.
 
-### Data  
+### Data
+All data from my analysis are in folder `data`. It contains polygons and points data for MyISAM engine. To compare different engine types you should clone data from this tables to similuar ones but with different engines.
+> You can copy data with sql query like `insert into points_innodb_800k select * from points_myisam_800k`. Its very intensive operation. Some times you will need to rebuild table spatial index, so check its existens after copy.
 
 ### Queries
 All queries for analysis are in folder `queries`.  
 To get more accuracy results you should execute all queries in mysql/maria cli (not in phpmyadmin) to avoid data transfer from mysql/maria to phpmyadmin. Also you should suppress mysql/maria cli output and pass stderr stdout to /dev/null/. Just use `pager > /dev/null` in cli. To reset pager just execute `pager`.  
 > Engine Aria supported only in MariaDB. So queries that use Aria won't work in MySQL
+
+### My results
+I test 108 polygons with 3 points pack: 800k, 3kk and 10kk.  
+[Table goes here]
+[Graphic goes here]
+[Computer config goes here]
+
