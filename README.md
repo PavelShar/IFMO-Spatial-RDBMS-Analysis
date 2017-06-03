@@ -78,6 +78,10 @@ All execution time in seconds
 | ST_Overlaps                    	| 1.163341 	| 1.411400 	| 1.299009 	| 100        	|
 | GeometryArea                   	| 0.373162 	| 0.516149 	| 0.393356 	| 100        	|
 
+
+![Polygons1](https://github.com/PavelShar/IFMO-Spatial-RDBMS-Analysis/blob/master/images/Polygons1.png "Polygons 1")
+![Polygons2](https://github.com/PavelShar/IFMO-Spatial-RDBMS-Analysis/blob/master/images/Polygons2.png "Polygons 2")
+
 #### Operations with points and polygons  
 #### 800k points pack
 | RDBMS + Engine   	| Min       	| Max       	| Average   	| Iterations 	|
@@ -105,3 +109,5 @@ All execution time in seconds
 | MariaDB + Aria   	| 13.292874  	| 17.710846  	| **17.08931**   	| 10         	|
 | MariaDB + XtraDB 	| 14.422254  	| 18.774196  	| 17.657928  	| 10         	|
 | MariaDB + MyISAM 	| 13.204355  	| 18.986446  	| 17.226407  	| 10         	|
+
+![ST_Contains](https://github.com/PavelShar/IFMO-Spatial-RDBMS-Analysis/blob/master/images/ST_Contains.png "ST_CONTAINS")
